@@ -70,7 +70,7 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+git commit -m "first commit"
 .env.test
 .env.production
 
