@@ -6,7 +6,6 @@ const routineSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: "User",
             required: true,
-            index: true,
         },
 
         name: {
@@ -22,7 +21,7 @@ const routineSchema = new mongoose.Schema(
 
         isActive: {
             type: Boolean,
-            default: true,
+            default: false,
         },
 
         durationInDays: {
@@ -35,5 +34,14 @@ const routineSchema = new mongoose.Schema(
         timestamps: true,
     }
 );
+
+routineSchema.index(
+    { userId: 1 },
+    {
+        unique: true,
+        partialFilterExpression: { isActive: true },
+    }
+);
+
 
 export const Routine = mongoose.model("Routine", routineSchema);

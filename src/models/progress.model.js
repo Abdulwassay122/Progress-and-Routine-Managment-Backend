@@ -30,4 +30,6 @@ const progressSchema = new mongoose.Schema(
     }
 );
 
+progressSchema.index({ userId: 1, taskId: 1, date: 1 }, { unique: true });
+
 export const Progress = mongoose.model("Progress", progressSchema);
