@@ -72,6 +72,7 @@ web_modules/
 # dotenv environment variables file
 git commit -m "first commit"
 .env.test
+.env
 .env.production
 
 # parcel-bundler cache (https://parceljs.org/)
